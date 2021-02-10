@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script type="text/javascript" src="jquery-1.2.6.pck.js"></script>
+    <script type="text/javascript" src="jquery.maskedinput-1.1.4.pack.js"/></script>
+    <style>
+        *{margin:0; padding:0;}
+        html{font-family: sans-serif; color: white;}
+        body{background: rgb(47, 47, 47);}
+        h2{font-size: medium; margin: 20px 25px;}
+        form{width: 94%; margin: auto;}
+        fieldset{
+            padding: 8px; 
+            border-color:rgb(90, 150, 250); 
+        }
+        fieldset *{display: block;}
+        fieldset legend{padding: 0 10px; font-weight: bold; font-size: small;} 
+        label{font-size: 75%;}
+        input{
+            margin-bottom: 5px; 
+            border-radius: 4px; 
+            border: none;
+        }
+        input#enviar{
+            padding: 5px; 
+            background-color: rgb(60, 135, 120); 
+            color:white; 
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            margin: 5px;
+        }
+        input#enviar:hover{
+            background-color: rgb(10, 190, 150);
+        }
+        span.exibe{display: none;}
+    </style>
+</head>
+<body>
+    <h2>Ficha de Cadastro por Tempo Determinado / COVID 19</h2>
+    
+    <form name="form" method="post" action="">
+     <fieldset>
+        <legend>Dados Pessoais (campos obrigatórios)</legend>
+        <label for="matricula">matrícula:</label><span class="exibe" id="">oi</span>
+        <input type="text" name="mat" id="mat">
+        <label for="nome">nome:</label><span class="exibe" id=""></span>
+        <input type="text" name="nome" id="nome">
+        <fieldset>
+         <legend>endereço</legend>   
+         <label for="end">rua:</label><span class="exibe" id=""></span>
+         <input type="text" name="rua" id="rua">
+         <label for="end">número:</label><span class="exibe" id=""></span>
+         <input type="text" name="num" id="num">
+         <label for="end">bairro:</label><span class="exibe" id=""></span>
+         <input type="text" name="bairro" id="bairro">
+         <label for="end">cidade:</label><span class="exibe" id=""></span>
+         <input type="text" name="cidade" id="cidade">
+        </fieldset> 
+        <label for="tel">telefone:</label><span class="exibe" id=""></span>
+        <input type="text" name="tel" id="tel">    
+        <label for="email">email:</label><span class="exibe" id=""></span>
+        <input type="text" name="email" id="email">
+        <label for="cpf">CPF:</label><span class="exibe" id=""></span>
+        <input type="text" name="cpf" id="cpf"/>
+      </fieldset>
+      <input type="button" value="enviar" id="enviar"> 
+    </form>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#tel").mask("(99)99999-9999");
+            $("#cpf").mask("999.999.999-99");
+        });
+    </script>
+</body>
+</html>
