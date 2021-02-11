@@ -19,7 +19,7 @@
         }
         fieldset *{display: block;}
         fieldset legend{padding: 0 10px; font-weight: bold; font-size: small;} 
-        label{font-size: 75%;}
+        label, p{font-size: 75%; margin-top: 7px;}
         input{
             margin-bottom: 5px; 
             border-radius: 4px; 
@@ -37,21 +37,24 @@
         input#enviar:hover{
             background-color: rgb(10, 190, 150);
         }
-        span.exibe{display: none;}
+        span.exibe{ display: none;}
+        div.gen *{ display:inline-flex; }
     </style>
 </head>
 <body>
-    <h2>Ficha de Cadastro por Tempo Determinado / COVID 19</h2>
+    <h2>Formulário Básico</h2>
     
     <form name="form" method="post" action="">
      <fieldset>
         <legend>Dados Pessoais (campos obrigatórios)</legend>
-        <label for="matricula">matrícula:</label><span class="exibe" id="">oi</span>
-        <input type="text" name="mat" id="mat">
+        <!--<label for="matricula">matrícula:</label><span class="exibe" id="">oi</span>
+        <input type="text" name="mat" id="mat">-->
         <label for="nome">nome:</label><span class="exibe" id=""></span>
         <input type="text" name="nome" id="nome">
         <fieldset>
-         <legend>endereço</legend>   
+         <legend>endereço</legend>
+         <label for="cep">CEP:</label><span class="exibe" id=""></span>
+         <input type="text" name="cep" id="cep">   
          <label for="end">rua:</label><span class="exibe" id=""></span>
          <input type="text" name="rua" id="rua">
          <label for="end">número:</label><span class="exibe" id=""></span>
@@ -60,20 +63,78 @@
          <input type="text" name="bairro" id="bairro">
          <label for="end">cidade:</label><span class="exibe" id=""></span>
          <input type="text" name="cidade" id="cidade">
+         <label for="end">UF:</label><span class="exibe" id=""></span>
+          <select id="uf">
+             <option value="ac">AC</option>
+             <option value="al">AL</option>
+             <option value="ap">AP</option>
+             <option value="am">AM</option>
+             <option value="ba">BA</option>
+             <option value="ce">CE</option> 
+             <option value="df">DF</option>
+             <option value="es">ES</option>
+             <option value="go">GO</option>
+             <option value="ma">MA</option>
+             <option value="mt">MT</option>
+             <option value="ms">MS</option>
+             <option value="mg">MG</option>
+             <option value="pa">PA</option>
+             <option value="pb">PB</option>
+             <option value="pe">PE</option>
+             <option value="pi">PI</option>
+             <option value="pr">PR</option>
+             <option value="rj">RJ</option>
+             <option value="rn">RN</option>
+             <option value="ro">RO</option>
+             <option value="rr">RR</option>
+             <option value="rs">RS</option>
+             <option value="sc">SC</option>
+             <option value="se">SE</option>
+             <option value="sp">SP</option>
+             <option value="to">TO</option>
+         </select>
         </fieldset> 
         <label for="tel">telefone:</label><span class="exibe" id=""></span>
         <input type="text" name="tel" id="tel">    
         <label for="email">email:</label><span class="exibe" id=""></span>
         <input type="text" name="email" id="email">
-        <label for="cpf">CPF:</label><span class="exibe" id=""></span>
-        <input type="text" name="cpf" id="cpf"/>
+        <label for="email">Data de Nascimento:</label><span class="exibe" id=""></span>
+        <input type="text" name="dnasc" id="dnasc">
+        <p>Sexo:</p>
+        <div class="gen">
+         <input type="radio" id="masc" name="sexo" value="masc" checked>
+         <label for="masc">Masculino</label>
+        </div>
+        <div class="gen"> 
+         <input type="radio" id="fem" name="sexo" value="fem">
+         <label for="fem" class="gen">Feminino</label>
+        </div>
+        <div class="gen"> 
+         <input type="radio" id="outro" name="sexo" value="outro">
+         <label for="outro" class="gen">Outro</label>
+        </div>
+        <label for="eciv">Estado Civil:</label><span class="exibe" id=""></span>
+        <input type="text" name="eciv" id="eciv">
+        <label for="eciv">Profissão:</label><span class="exibe" id=""></span>
+        <input type="text" name="prof" id="prof">
+        <label for="eciv">Nacionalidade:</label><span class="exibe" id=""></span>
+        <input type="text" name="nac" id="nac">
+        <label for="eciv">Nome da Mãe:</label><span class="exibe" id=""></span>
+        <input type="text" name="nmae" id="nman">
+        <label for="eciv">Nome do Pai:</label><span class="exibe" id=""></span>
+        <input type="text" name="npai" id="npai"> 
+        <!--<label for="cpf">CPF:</label><span class="exibe" id=""></span>
+        <input type="text" name="cpf" id="cpf"/>-->
       </fieldset>
       <input type="button" value="enviar" id="enviar"> 
     </form>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#tel").mask("(99)99999-9999");
-            $("#cpf").mask("999.999.999-99");
+            //$("#cpf").mask("999.999.999-99");
+            $("#cep").mask("99999-999");
+            $("#num").mask("99999");
+            $("#dnasc").mask("99/99/9999");
         });
     </script>
 </body>
